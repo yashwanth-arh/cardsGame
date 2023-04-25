@@ -1,0 +1,26 @@
+<div
+  class="mainContainer"
+  fxLayout="column"
+  fxLayoutAlign="space-around center"
+>
+  <div fxLayout="row wrap" class="cards" fxLayoutAlign="center">
+    <div
+      class="card"
+      *ngFor="let card of cards; let i = index"
+      (click)="isEnable ? '' : onSelectCard(card, i)"
+    >
+      <div class="front">
+        <!-- <img [src]="card.image" [alt]="card.rank" class="imgBox front" /> -->
+        <img src="../../assets/cards/pic.jpeg" class="imgBox front" />
+      </div>
+      <div
+        class="back"
+        [style.background-image]="'url(' + card.image + ')'"
+      ></div>
+    </div>
+  </div>
+  <div class="buttons">
+    <button>Reset</button>
+    <button>Continue</button>
+  </div>
+</div>
